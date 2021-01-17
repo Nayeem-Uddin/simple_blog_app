@@ -35,7 +35,7 @@ app.use('/blogs',blogRouter)
 
 //set template engine
 app.set('view engine','ejs')
-//setting up the port number
+//setting up the port number is 8000
 const PORT = process.env.PORT || 8000
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`)
