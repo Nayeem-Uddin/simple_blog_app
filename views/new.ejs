@@ -17,24 +17,58 @@
     <div class="container">
         <h1 class="mt-4 mb-4 text-white">New Blog Post</h1>
         <form action="/blogs" method="POST" enctype="multipart/form-data">
+
+
             <div class="form-group">
-                <label for="title" class="text-white">Title</label>
-                <input type="text" class="form-control" placeholder="Title" name="title" required>
+                <label for="b_group" class="text-white">Blood Group : </label>
+                <select id="b_group" name="b_group" pattern="([AaBbOo]|[Aa][Bb])[\+-]" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
             </div>
 
             <div class="form-group">
-                <label for="author" class="text-white">Author</label>
-                <input type="text" class="form-control" placeholder="Author" name="author" required>
+                <label for="h_name" class="text-white">Hospital Name </label>
+               <input class="form-control" type="text" placeholder="Hospital Name" name="h_name" required>
             </div>
 
             <div class="form-group">
-                <label for="description" class="text-white">Description</label>
-                <textarea name="description" placeholder="description" class="form-control"></textarea>
+            <label for="h_location" class="text-white">Hospital Location : </label>
+               <input class="form-control" type="text" placeholder="Hospital Location" name="h_location" required>
             </div>
+            
             <div class="form-group">
-                <label for="image" class="text-white">Upload image</label>
+                <label for="title" class="text-white">Patients Problem</label>
+                <input type="text" class="form-control" placeholder="Patients Problem" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="author" class="text-white">Post on behalf of the patient</label>
+                <input type="text" class="form-control" placeholder="relation with patient" name="author">
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="text-white">Phone number on behave of patient</label>
+                <input type="text" class="form-control" placeholder="Phone number on behave of patient" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="text-white">patients problem Description</label>
+                <textarea name="description" placeholder="patients problem Description" class="form-control">
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image" class="text-white">Upload image of patient</label>
                 <input type="file" name="image" id="image" class="form-control-file text-white">
             </div>
+
             <div class="form-group">
                 <a href="/" class="btn btn-warning">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save</button>

@@ -52,8 +52,12 @@ router.post('/',upload.single('image'),async (req,res)=>{
     //  console.log(req.body)
     // console.log(req.file)
      let blog = new Blog({
+         b_group:req.body.b_group,
+         h_name:req.body.h_name,
+         h_location:req.body.h_location,
          title:req.body.title,
          author:req.body.author,
+         phone:req.body.phone,
          description:req.body.description,
          img:req.file.filename
     });
@@ -72,13 +76,16 @@ router.get('/edit/:id',async (req,res)=>{
     res.render('edit',{blog:blog})
 })
 //route that handle update
-router.put('/:id',upload.single('image'),async (req,res)=>{
+router.put('/:id',async (req,res)=>{
     req.blog = await Blog.findById(req.params.id)
     let blog = req.blog
+    blog.b_group = req.body.b_group
+    blog.h_name = req.body.h_name,
+    blog.h_location = req.body.h_location,
     blog.title = req.body.title,
     blog.author = req.body.author,
+    blog.phone = req.body.phone,
     blog.description = req.body.description
-    blog.img = req.file.originalname
     try {
         blog = await blog.save()
         //rederect to the view route

@@ -9,11 +9,27 @@ const slug = require('mongoose-slug-generator')
 //initialize slug
 mongoose.plugin(slug)
 const blogSchema = new mongoose.Schema({
+    b_group:{
+        type:String,
+        required:true
+    },
+    h_name:{
+        type:String,
+        required:true
+    },
+    h_location:{
+        type:String,
+        required:true                                                                        
+    },
     title:{
         type:String,
         required:true
     },
     author:{
+        type:String,
+        required:true
+    },
+    phone:{
         type:String,
         required:true
     },
@@ -31,7 +47,8 @@ const blogSchema = new mongoose.Schema({
     },
     img:{
         type:String,
-        default:'placeholder.jpg'
+        required:false,
+        default:'placeholder.jpg', 
     },
     slug:{
         type:String,
